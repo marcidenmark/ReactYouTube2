@@ -1,30 +1,11 @@
-# react-boilerplate
+# YouTube Video Player build with React
+## This is a mini app using pure React to create a YouTube video Player.
+A user can search YouTubes API and play any video from all devices.
 
-Simple react starter with the following config:
-
-- React, ReactDOM
-- Webpack 3
-- Babel with es2015 and react presets
-- Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
-
-## Scripts
-
-To start the local Webpack Dev Server (usually on port `8080`):
-
-```bash
-yarn start
-```
-
-To lint all JavaScript files in the `src` folder:
-
-```bash
-yarn lint
-```
-
-To build and deploy your app to `gh-pages` branch on the GitHub repo:
-
-```bash
-yarn deploy
-```
+### Technologies used
+- React
+- YouTube API
+- Javascript (ES6, and JSX)
+- HTML and CSS
+- Bootstrap for instant styling
+- AJAX requests to interact with the YouTube API
