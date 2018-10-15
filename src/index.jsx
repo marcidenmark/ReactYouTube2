@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+import YTSearch from 'youtube-api-search';
+import _ from 'lodash';
+
 import '../assets/stylesheets/application.scss';
+import App from './components/app';
 
-const Hello = props => <div>Hello, {props.name}</div>;
+const API_KEY = 'AIzaSyA7xjqxI8Dobx2EhGsKG4xBOQzhUZ5JD-g';
 
-const root = document.getElementById('root');
-if (root) {
-  ReactDOM.render(<Hello name="World" />, root);
-}
+
+
+
+
+
+
+ReactDOM.render(<App />, document.querySelector('.container'));
