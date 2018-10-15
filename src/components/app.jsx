@@ -35,8 +35,8 @@ class App extends Component {
    	<div>
    	<SearchBar />
    	tktkt
-{/*   		<ActiveVideo />
-*/}   	</div>
+   	<VideoList />
+  	</div>
     );
   }
 }
