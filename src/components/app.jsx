@@ -14,16 +14,15 @@ const API_KEY = 'AIzaSyA7xjqxI8Dobx2EhGsKG4xBOQzhUZ5JD-g';
 class App extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state= {
+		this.state = {
 			videos: [],
-			selectedVideo: null
+			selectedVideo: [0]
 		};
-		this.videoSearch('deathstarcanteen')
+		this.videoSearch('siliconvalley')
 	}
 
 	videoSearch(term) {
-		YTSearch({key:API_KEY, term: term}, (videos) => {
+		YTSearch({key:API_KEY, term: term}, (videos)=> {
 			this.setState({
 				videos: videos,
 				selectedVideo: videos[0]
@@ -31,13 +30,19 @@ class App extends Component {
 		});
 	}
 	render() {
-   	return (
-   	<div>
-   	<SearchBar />
-   	tktkt
-   	<VideoList />
-  	</div>
-    );
-  }
+		const videoSearch = _ .debounce((term ) => { this.videoSearch(term)}, 300 )
+		// the function will be called once every 300 miliseconds
+		return (
+			<div>
+				<SearchBar onSearchTermChange={videoSearch} />
+
+			</div>
+		);
+	}
 }
 export default App;
+//				<VideoListItem video= {this.state.selectedVideo} />
+// 				<VideoList
+//					onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+//					videos={this.state.videos} />
+
