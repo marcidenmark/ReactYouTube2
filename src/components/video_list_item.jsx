@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-// below, multiple properties off of the props object
 const VideoListItem = ({video, onVideoSelect}) => {
 	const imageUrl = video.snippet.thumbnails.default.url;
 	// console.log(video)
@@ -18,5 +17,6 @@ const VideoListItem = ({video, onVideoSelect}) => {
 		</li>
 	);
 }
+
 
 export default VideoListItem;

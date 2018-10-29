@@ -14,13 +14,19 @@ const API_KEY = 'AIzaSyA7xjqxI8Dobx2EhGsKG4xBOQzhUZ5JD-g';
 class App extends Component {
 	constructor(props) {
 		super(props);
+// adding another initializer to the state!
 		this.state = {
 			videos: [],
-			selectedVideo: [0]
+			selectedVideo: null
 		};
 		this.videoSearch('siliconvalley')
-	}
+		// this is a method-- videoSearch
 
+	}
+// definging a callback
+// videoSearch is a method with
+// one parameter, a string, (term)
+// this method, videoSearch is passed down to the SearchBar component
 	videoSearch(term) {
 		YTSearch({key:API_KEY, term: term}, (videos)=> {
 			this.setState({
@@ -35,7 +41,10 @@ class App extends Component {
 		return (
 			<div>
 				<SearchBar onSearchTermChange={videoSearch} />
-
+				<ActiveVideo video= {this.state.selectedVideo} />
+				<VideoList
+					onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+					videos={this.state.videos} />
 			</div>
 		);
 	}
